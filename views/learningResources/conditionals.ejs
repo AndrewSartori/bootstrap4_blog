@@ -1,0 +1,776 @@
+<% include ../partials/header %>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>Conditionals</h1>
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1>Conditionals and "Control Flow"</h1>
+            <div>
+            	<h3>Javascript Programs and Statements</h3>
+            	<ul>
+            		<li>
+            			Javascript Programs
+            			<ul>
+            				<li>
+            					A <b>computer program</b> is a list of <i>instructions</i> to be <i>executed</i> by a computer. 
+            				</li>
+            				<li>
+            					In a programming language, these programming instructions are called <i><b>statements</b></i>.
+            				</li>
+            				<li>
+            					A <b>Javascript program</b> is a list of programming <b>statements</b> and, in HTML, a Javascript program is executed by the web browser. The statements are executed, one by one, in the order in which they were written. 
+            				</li>
+            				<li><i>Javascript programs, and thus Javascript statements, are often called <b>code</b>, or "Javascript code". When individuals refer to "code" they are referring to the list of statements that comprise the program.</i></li>
+            			</ul>
+            		</li>
+            	</ul>
+            	<ul>
+            		<li>
+            			Javascript Statements are composed of:
+            			<ul>
+            				<li>
+            					Values (Primitive Datatypes)
+            					<ul>
+            						<li>
+            							Numbers
+            						</li>
+            						<li>
+            							Strings
+            						</li>
+            						<li>
+            							Null
+            						</li>
+            						<li>
+            							Undefined
+            						</li>
+            						<li>
+            							Booleans
+            						</li>
+            					</ul>
+            				</li>
+            				<li>
+            					Expressions
+            					<ul>
+            						<li>
+            							Any valid set (property = value) of literals, operators, and expressions that evaluate to a single value.
+            						</li>
+            						<li>
+            							The value may be a number (ex: 43;), a string (ex: "43";), or a logical value (ex: true;).
+            						</li>
+            						<li>
+            							There are 2 types of expressions and 3 categories into which all expressions fall:
+            							<ul>
+            								<li>
+            									Types of Expressions
+            									<ul>
+            										<li>
+            											Expressions that assign a value to a variable. These expressions use <i><b>assignment operators</b></i> such as the "=" sign.<br>
+            											Ex: x = 7;
+            										</li>
+            										<li>
+            											Expressions that do math ("evaluate") with variables or values but that are not assigned to a particular variable. <br>
+            											Ex: x + y;
+            										</li>
+            									</ul>
+            								</li>
+            								<li>
+            									Categories of Expressions
+            									<ul>
+            										<li>
+            											Arithmetic
+            											<ul>
+            												<li>
+            													These expressions <b><i>evaluate</i></b> (read: "after following the steps involved with the expression, the result is") to a numeric datatype value (read: "the expression follows its instructions and spits out a number")
+            												</li>
+            											</ul>
+            										</li>
+            										<li>
+            											String
+            											<ul>
+            												<li>
+            													These expressions evaluates to a character string datatype value.
+            												</li>
+            											</ul>
+            										</li>
+            										<li>
+            											Logical
+            											<ul>
+            												<li>
+            													These expressions evaluate to either true or false.
+            												</li>
+            											</ul>
+            										</li>
+            									</ul>
+            								</li>
+            							</ul>
+            						</li>
+            					</ul>
+            				</li>
+            				<li>
+            					Keywords
+            				</li>
+            				<li>
+            					Comments
+            				</li>
+            				<li>
+            					Operators
+            					<ul>
+            						<li>
+            							Comparison Operators <br>
+            							<i>Assume (x = 5) for all examples</i>
+            							<table>
+            								<tr>
+            									<th>Operator Symbol</th>
+            									<th>Operator Name</th>
+            									<th>Operator Example</th>
+            									<th>Example's Boolean</th>
+            								</tr>
+            								<tr>
+            									<td>
+            										>
+            									</td>
+            									<td>
+            										Greater than
+            									</td>
+            									<td>
+            										x > 10
+            									</td>
+            									<td>
+            										false (x = 5)
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										>=
+            									</td>
+            									<td>
+            										Greater than or equal to
+            									</td>
+            									<td>
+            										x >= 5
+            									</td>
+            									<td>
+            										true
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										<
+            									</td>
+            									<td>
+            										Less than
+            									</td>
+            									<td>
+            										x < -50
+            									</td>
+            									<td>
+            										false (x = 5)
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										<=
+            									</td>
+            									<td>
+            										Less than or equal to
+            									</td>
+            									<td>
+            										x <= 100
+            									</td>
+            									<td>
+            										true
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										==
+            									</td>
+            									<td>
+            										Equal to (equivalence operator, <i>not the assignment operator</i>). This operators disregards the data type, thus, x = 5 and x == "5" would both evaluate to "true"
+            									</td>
+            									<td>
+            										x == "5"
+            									</td>
+            									<td>
+            										true (data type is disregarded, thus a numeric 5 and a string "5" are considered equal).
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										!=
+            									</td>
+            									<td>
+            										Not equal to
+            									</td>
+            									<td>
+            										x != "b"
+            									</td>
+            									<td>
+            										true (x = 5)
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										===
+            									</td>
+            									<td>
+            										Strict equivalence (equal value and type)
+            									</td>
+            									<td>
+            										x === "5"
+            									</td>
+            									<td>
+            										false (this "strict equivalence" operator needs both the value, and the data type, to be identical)
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										!==
+            									</td>
+            									<td>
+            										Not equal value or type
+            									</td>
+            									<td>
+            										x !== "5"
+            									</td>
+            									<td>
+            										true
+            									</td>
+            								</tr>
+            							</table>
+            							<ul>
+            								<li>
+            									<i>Type Coercion</i>
+            									<ul>
+            										<li>
+            											The equivalence operator, "==", performs "type coercion" while the strict equivalence operator, "===", does not perform "type coercion".
+            											<ul>
+            												<li>
+            													<i>"Type coercion"</i> occurs when the JS engine is asked to compare two values and, to make this task "easier", the JS engine converts both values to the same data type.
+            													<ul>
+            														<li>
+            															How does the JS engine convert different data types to the same type? Which type is the engine converting and which is it using as the control? Is the JS engine just holding the values in temporary memory wherethe engine "assumes" the values are the same? <b>Use strcity equivalence operators to avoid headaches</b>
+            														</li>
+            													</ul>
+            												</li>
+            											</ul>
+            										</li>
+            									</ul>
+            								</li>
+            							</ul>
+            						</li>
+            						<li>
+            							Logical Operators
+            							<ul>
+            								<li>
+            									Each has a left, and a right side. Some operators only need one side to evaluate to "true", some need both sides to evaluate to "true". 
+            									<table>
+            										<tr>
+            											<th>
+            												Operator Symbol
+            											</th>
+            											<th>
+            												Operator Name
+            											</th>
+            											<th>
+            												Example
+            											</th>
+            											<th>
+            												Result
+            											</th>
+            										</tr>
+            										<tr>
+            											<td>
+            												&amp;&amp;<br>
+            												<i>Both sides must evaluate to "true" on both sides to return "true"</i>. You cannot return "false" on both sides with the &amp;&amp; - it must be TRUE &AMP;&AMP; TRUE<br>
+            												
+            											</td>
+            											<td>
+            												AND
+            											</td>
+            											<td>
+            												x < 10 &amp;&amp; x !==5
+            											</td>
+            											<td>
+            												false
+            											</td>
+            										</tr>
+            										<tr>
+            											<td>
+            												||<br>
+            												<i>Only one side must evluate to "true" to return the value "true"</i><br>
+            												<i>Short Circuiting</i> is a phrase applied to conditional expressions. When the first half of a conditional expression evaluates to "true", the JS engine does not read the second condition because the first was true, thus, for OR, the expression evaluates to true without needing to read the second condition.
+            											</td>
+            											<td>
+            												OR
+            											</td>
+            											<td>
+            												x > 9 || x === 5
+            											</td>
+            											<td>
+            												true
+            											</td>
+            										</tr>
+            										<tr>
+            											<td>
+            												!<br>
+            												No left/right side. This logical operator inverts the value of whatever it is applied to (like writing "NOT" before something, like a corny joke).
+            											</td>
+            											<td>
+            												NOT
+            											</td>
+            											<td>
+            												!(x === y)
+            											</td>
+            											<td>
+            												true
+            											</td>
+            										</tr>
+            									</table>
+            								</li>
+            							</ul>
+            						</li>
+            						<li>
+            							Arithmetic Operators <br>
+            							<i>Assume (x = 5) for all examples</i>
+            							<table>
+            								<tr>
+            									<th>
+            										Operator Symbol
+            									</th>
+            									<th>
+            										Operator Name
+            									</th>
+            									<th>
+            										Operator Description
+            									</th>
+            									<th>
+            										Example
+            									</th>
+            								</tr>
+            								<tr>
+            									<td>
+            										+
+            									</td>
+            									<td>
+            										Addition
+            									</td>
+            									<td>
+            										Add two variables and/or values.
+            									</td>
+            									<td>
+            										x = y + 2;
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										-
+            									</td>
+            									<td>
+            										Subtraction
+            									</td>
+            									<td>
+            										Subtract one variable/value from another.
+            									</td>
+            									<td>
+            										x = y - 2;
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										*
+            									</td>
+            									<td>
+            										Multiplication
+            									</td>
+            									<td>
+            										Multiply one variable/value by another variable/value.
+            									</td>
+            									<td>
+            										x = y * 2;
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										/
+            									</td>
+            									<td>
+            										Division
+            									</td>
+            									<td>
+            										Divide one variable/value by another variable/value.
+            									</td>
+            									<td>
+            										x = 2 / y;
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										%
+            									</td>
+            									<td>
+            										Modulus
+            									</td>
+            									<td>
+            										This is not division. Modulus returns the <i>remainder</i>, and only the remainder.
+            									</td>
+            									<td>
+            										x = 100 % 3;
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										++
+            									</td>
+            									<td>
+            										Increment
+            									</td>
+            									<td>
+            										Unless specified, "increment" will add 1 (increment by 1) to the value specified.
+            									</td>
+            									<td>
+            										x = y++;
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										--
+            									</td>
+            									<td>
+            										Decrement
+            									</td>
+            									<td>
+            										Without explicitely declaring what the decrement is, each decrement is by 1.
+            									</td>
+            									<td>
+            										x = y--;
+            									</td>
+            								</tr>
+            								<tr>
+            									<td>
+            										
+            									</td>
+            									<td>
+            										
+            									</td>
+            									<td>
+            										
+            									</td>
+            									<td>
+            										
+            									</td>
+            								</tr>
+            							</table>
+            						</li>
+            						<li>
+            							Truthiness, Falsiness, and Interesting Cases
+            							<ul>
+            								<li>
+            									Every value has an inherent boolean-ness to them, which is to say, every value is either true or false.
+            									<ul>
+            										<li>
+            											Falsy Values (everything else is Truthy)
+            											<ul>
+            												<li>
+            													false
+            												</li>
+            												<li>
+            													0
+            												</li>
+            												<li>
+            													" " (empty string)
+            												</li>
+            												<li>
+            													null
+            												</li>
+            												<li>
+            													undefined
+            												</li>
+            												<li>
+            													NaN
+            												</li>
+            											</ul>
+            										</li>
+            										<li>
+            											Interesting Cases
+            											<ul>
+            												<li>
+            													"1" == true (true)
+            												</li>
+            												<li>
+            													0 == false (true)
+            												</li>
+            												<li>
+            													null == undefined (true)
+            												</li>
+            												<li>
+            													NaN == NaN (false)
+            												</li>
+            											</ul>
+            										</li>
+            									</ul>
+            								</li>
+            							</ul>
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            			<ul>
+            				<li>
+            					Semicolons separate javascript statements. Add a semicolon at the end of each executable statement. <br>
+            					var a = 5;<br>
+            					var b = 6;<br>
+            					var c = a + b;<br>
+            				</li>
+            				<li>
+            					Use "white space" (normal spacing between words like you'd use in a written document) to make code more readable.
+            				</li>
+            				<li>
+            					Javascript statements can be grouped together inside of {} brackets to make a <b>code block</b>. 
+            					<ul>
+            						<li>
+            							The purpose of <i>code blocks</i> is to define statements which are to be executed together, or in a very specific order.
+            						</li>
+            						<li>
+            							Javascript <i>functions</i> group statements together in blocks and then execute those statements at a specific time. <br>
+            							function myFunction() {
+            							....document.getElementById("demo1").innerHTML = "Hello Dolly!";
+            							....document.getElementById.innerHTML = "How are you?";
+            							}
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </div>
+            <div>
+            	<h3>Boolean Logic</h3>
+            	<ul>
+            		<li>
+            			<b>Boolean Logic</b> is applied when a programmer writes programming statements that evaluate to be either <i><b>true</b></i>, or <i><b>false</b></i>.
+            		</li>
+            		<li>
+            			In isloation, this is useless (who cares that I wrote a statement that resolved to "true"?). However, if you write code that may, or may not, resolve to "true" based on user input, suddenly a new world of coding possibilities opens up (so you're telling me that I can use the user's interactions with my site to give them more possibilities and options for things to do on my site? Interesting...).
+            		</li>
+            		<li>
+            			Combining statements to create complex statements 
+            		</li>
+            	</ul>
+            </div>
+            <div>
+            	<h3>JS Conditionals - Making Decisions with Code</h3>
+            	<ul>
+            		<li>
+            			<h4>If Statements</h4>
+            			<b>If, Else If, and Else</b>
+            			<br><button onclick="bouncerFunction()">If Statement in Action</button><br>
+            			This follows the initial "If" condition. "Else If" is a secondary condition.
+            		</li>
+            		<li>
+            			<h3>Number Guessing Game</h3>
+            			<button onclick="numberGuessingFunction()">Number Guessing Game</button>
+            		</li>
+            	</ul>
+            </div>
+            <div>
+            	<h3>Loops (Repeatable Things)</h3>
+            	<p>
+            		Keep code free of redundancy by refactoring and keeping it as tight as possible (DRY: Don't Repeat Yourself).
+            	</p>
+            	<ul>
+            		<li>
+            			<a href="whileLoops.html">While Loops</a>
+            			<ul>
+            				<li>
+            					Repeat code WHILE the specified condition evaluates "true".
+            					<ul>
+            						<li>
+            							while(specifiedCondition) {<br>
+            							....run some code while the specified condition evaluates to "true";<br>
+            							....stop running the loop when the specified condition evaluates to "false";<br>
+            							}
+            						</li>
+            					</ul> 
+            				</li>
+            				<li>
+            					While loops are similar to if statements, except it repeats a given code block instead of just running it once
+            				</li>
+            			</ul>
+            			<ul>
+            				<li>
+            					<b>Infinite Loops</b> occur when the while loop's condition never evaluates to "true". When this happens, the loop continues either until your browser, or computer, run out of memory and thus crash. The loop below will run, infinitely, because there is no increment, thus, the loop will print "0" until your computer crashes.
+            					<ul>
+            						<li>
+            							function infiniteLoop () {<br>
+            							....var count = 0;<br>
+            							....while(count < 10) {<br>
+            							........console.log(count);	<br>
+            							....}<br>
+            							};<br>
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            	<ul>
+            		For Loops
+            		<ul>
+            			<li>
+            				for(<br>(initialize the variable being counted over, which is to say, assign the starting "count" value to a variable);<br> (state the end value of the initialized variable, which is to say, clearly state the condition that must be satisfied to stop running the for loop);<br> increment) {<br>
+            				....RUN THIS CODE; <br>
+            				}
+            				<ul>
+            					<li>
+            						for(var count = 0; count < 6; count++) {<br>
+            						....console.log(count);<br>
+            						}
+            					</li>
+            					<li>
+            						The above example initializes the variable within the FOR loop, whereas the WHILE loop needs the variable initialized before starting the loop. Additionally, the FOR loop is shorter than the WHILE loop.
+            					</li>
+            					<li>
+            						FOR LOOPS are, actually, very smart. The first thing you do is say "this is where I want the loop to begin", then you say "this is where I want the loop to end", then you say "this is how I want to get from the starting value to the ending value"". 
+            					</li>
+            				</ul>
+            			</li>
+            			<li>
+            				For Loops - Problem Set <br>
+            				<ul>
+            					<li>
+            						Print all numbers between -10 and 19<br>
+            						<button onclick="forLoop1()">Answer</button>
+            					</li>
+            					<li>
+            						Print all even numbers between 10 and 40<br>
+            						<button onclick="forLoop2()">Answer</button>
+            					</li>
+            					<li>
+            						Print all odd numbers between 300 and 333<br>
+            						<button onclick="forLoop3()">Answer</button>
+            					</li>
+            					<li>
+            						Print all numbers divisible by 5 and 3 between 5 and 50.<br>
+            						<button onclick="forLoop4()">Answer</button>
+            					</li>
+            					<li>
+            						Fizz Buzz! <br>
+            						<button onclick="fizzBuzzForLoop()">Answer</button>
+            					</li>
+            				</ul>
+            			</li>
+            		</ul>
+            	</ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  
+  <script>
+// Conditionals are the 1 way to add decisions to code
+// If, ELse If, and Else
+function bouncerFunction() {
+	var agePrompt = prompt("WHAT IS YOUR AGE? USE NUMBERS, ONLY.");
+	if (Number(agePrompt) < 18) {
+		alert("GET OUT YOU UNDERAGED FOOL.");
+	} else if (Number(agePrompt) < 22) {
+		alert("Welcome to the bar. You are old enough to enter, but not old enough to drink alcohol.");
+	} else if (Number(agePrompt) < 0) {
+		alert("ERROR - YOU CANNOT BE A NEGATIVE AGE");
+	} else if (Number(agePrompt) == 21) {
+		alert("Happy 21st Birthday!");
+	} else if (Number(agePrompt) % 2) {
+		alert("Your age is odd, you old, odd, bat!");
+	} else if ((Math.sqrt(Number(agePrompt)) * Math.sqrt(Number(agePrompt))) == Number(agePrompt)) {
+		alert("DID THIS WORK? HOLY SHIT I FIGURE OUT HOW TO DO PERFECT SQUARES USING MY APE BRAIN.")
+		// Perfect square = take a number's square root and multiply by itself. If that gives the original sum, the number is a perfect square.
+	} else {
+		alert("You may enter, AND DRINK.");
+	}
+};
+
+
+function numberGuessingFunction() {
+	var numberPrompt = Number(prompt("GUESS A NUMBER from 1-100...AND TYPE THE NUMBER, NOT THE NAME"))
+	var secretNumber = 45
+
+	if (numberPrompt < secretNumber) {
+		alert("Too low - Try again");
+	} else if (numberPrompt > secretNumber) {
+		alert("Too high - Try again");
+	} else {
+		alert("YOU GUESSED THE SECRET NUMBER!!");
+	}
+};
+
+
+
+// Print all numbers between -10 and 19
+// ATTENTION: IF THE ENDING VALUE (THE CONDITIONAL STATEMENT THAT MUST BE SATISFIED TO END THE LOOP) IS IMPROPERLY WRITTEN, THE LOOP WILL NEITHER RUN NOR THROW AN ERROR IN THE CONSOLE.
+function forLoop1() {
+	for (var numbers = -10; numbers < 20; numbers+=1) {
+		document.write(numbers + "<br>")
+	}
+};
+
+
+// Print all even numbers between 10 and 40
+function forLoop2() {
+	for (var numbers = 10; numbers <= 40; numbers+=2) {
+		document.write(numbers + "<br>")
+	}
+};
+
+// Print all odd numbers between 300 and 333
+// ATTENTION: you do not need to end an IF statement with "else". In fact, an IF statement can bt just the "IF"
+function forLoop3() {
+	for (var i = 300; i <= 333; i++) {
+		if (i % 2 === 1) {
+			document.write(i + "<br>");
+		} 
+	}
+};
+
+// Print all numbers divisible by 5 and 3 between 5 and 50.
+function forLoop4() {
+	for (var i = 5; i <= 50; i++) {
+		if (i % 3 === 0 && i % 5 === 0) {
+			document.write(i + "<br>");
+		}
+	}
+};
+
+// Fizz Buzz!
+function fizzBuzzForLoop() {
+	for (var i = 1; i <= 100; i++) {
+		if (i % 3 === 0 && i % 5 === 0) {
+			document.write("Fizz Buzz <br>");
+		} else if (i % 3 === 0) {
+			document.write("Fizz<br>");
+		} else if (i % 5 === 0) {
+			document.write("Buzz<br>");
+		}
+	}
+};
+</script>
+
+
+<% include ../partials/footer %>

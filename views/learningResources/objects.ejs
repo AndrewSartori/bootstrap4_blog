@@ -1,0 +1,179 @@
+<% include ../partials/header %>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>Objects</h1>
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div>
+            	<h1>Javascript Objects</h1>
+            	<ul>
+            		<li>
+            			Each JS Object is a data structure more complex than the JS array.
+            		</li>
+            		<li>
+            			An array CAN hold any type of data, but it shouldn't. The superior data structure for holding different types of data (read: to hold a ton of disorganized shit) is the Object. 
+            			<ul>
+            				<li>
+            					var person = {<br>
+            					....name: "Cindy",<br>
+            					....age: 32,<br>
+            					....city: "Missoula",<br>
+            					};
+            					<ul>
+            						<li>
+            							JS Objects contain information that is organized into <b>key: value</b> pairs. This is also known as <b><i>property: value</i></b> pairs. 
+            						</li>
+            						<li>
+            							Objects can contain any kind of data: primitive data types, arrays, and objects.
+            						</li>
+            						<li>
+            							Accessing levels of an object is possible via appending the level to the object name via dot notation....UNLESS:
+            							<ul>
+            								<li>
+            									The property starts with a number. In that case, you MUST use this format to access the property of the object:
+            									<br>
+            									objectName["1blah"]
+            								</li>
+            								<li>
+            									The property name has white space in it: <br>
+            									objectName["fav color"]
+            								</li>
+            								<li>
+            									You want to use a variable to set the property you're looking up. This is a very cool exception, and a very useful one. By assigning a variable the value of the property you want to access, ex: <b><i>var summonerName = "name"</i></b>, you can access the object using brackets instead of dot notation: <br>
+            									<b><i>objectName[summonerName]</i></b>
+            								</li>
+            							</ul>
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			Creating Objects
+            			<ul>
+            				<li>
+            					Make an empty object and then add properties, and their values, to it.
+            					<ul>
+            						<li>
+            							var person = {}<br>
+            							person.name = "travis";<br>
+            							person.age = 21;<br>
+            							person.city = "LA";
+            						</li>
+            					</ul>
+            				</li>
+            				<li>
+            					Declare the object, and assign it properties and values, all at once.
+            					<ul>
+            						<li>
+            							var person = {<br>
+            							....name: "travis",<br>
+            							....age: 21,<br>
+            							....city: "LA"<br>
+            							};
+            						</li>
+            					</ul>
+            				</li>
+            				<li>
+            					Create an empty object and assign it properties after wards.
+            					<ul>
+            						<li>
+            							var person = new Object();<br>
+            							person.name = "travis";<br>
+            							person.age = 21;<br>
+            							person.city = "LA";<br>
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            	<h3>MovieDB</h3>
+            	<ul>
+            		<li>
+            			<button onclick="movieDatabase()">CLICK ME</button>
+            		</li>
+            	</ul>
+            </div>
+            <div>
+            	<h3>Javascript Methods</h3>
+            	<ul>
+            		<li>
+            			A <b>method</b> is a function that is the property of an object. Whoa, does this mean you've been wrong this entire time about what you've been saying "methods" were? No, quite the opposite. I'm more right than ever. When I said that "methods" were like "functions that got used so much they were just given a keyword and made a permanent fixture of javascript", what I'm really saying is "methods are functions that are properties of the javascript "object" as a whole."
+            		</li>
+            		<li>
+            			"This" keyword allows you to access the top level of the object you're working within, mostly so that you can write methods (functions that are properties of the object) that access data that is within the object.
+            			<ul>
+            				<li>
+            					objectName.objectInfoPrint = function() {<br>
+            					....this.objectDataInAnotherProperty.forEach(function(el){<br>
+            					........console.log(el);<br>
+            					....});
+            					}
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+<script type="text/javascript">
+
+// Movie Database
+function movieDatabase(){
+	var database = [
+		{
+			title: "Mad Max",
+			rating: "4.5 Stars",
+			hasWatched: "have"
+		},
+		{
+			title: "A Streetcar Named Desire",
+			rating: "4.0 Stars",
+			hasWatched: "have not"
+		},
+		{
+			title: "Fight Club",
+			rating: "4.8 Stars",
+			hasWatched: "have"
+		},
+		{
+			title: "Death of a Salesman",
+			rating: "4.9 Stars",
+			hasWatched: "have"
+		},
+		{
+			title: "Citizen Kane",
+			rating: "5.0 Stars",
+			hasWatched: "have not"
+		}
+	]
+
+
+	for (var i = 0; i < database.length-1; i++) {
+		document.write("You " + database[i].hasWatched + " watched \"" + database[i].title + "\", which received " + database[i].rating + " at the box office!<BR><BR>" );
+	}
+}
+</script>
+
+<% include ../partials/footer %>

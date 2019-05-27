@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= Article.title %></h1>
+            <h2 class="subheading"><%= Article.subTitle %></h2>
+            <span class="meta">Created On <%= Article.created_date %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p><%= Article.body %></p>
+
+          <!--1-->
+          <!--<h2 class="section-heading">< Article.sectionHeading %></h2>-->
+
+          <!--<p>< Article.body %></h2></p>-->
+          
+          <!--<blockquote class="blockquote">< Article.blockquote %></h2></blockquote>-->
+
+          <!--<a href="#">-->
+          <!--  <img class="img-fluid" src="img/post-sample-image.jpg" alt="">-->
+          <!--</a>-->
+          <!--<span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>-->
+
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <hr>
+
+<% include ./partials/footer %>

@@ -1,0 +1,56 @@
+<% include ./partials/header %>
+
+<!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/about-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>New Article</h1>
+              <span class="subheading">Write it Out!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+               <div class="container"> 
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="new_question_title">Create a New Article</h1>
+                            <div class="new_question_form">
+                                <form action="/posts" method="POST">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="title" placeholder="Article Title">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="subTitle" placeholder="Sub-Title">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <textarea class="form-control" type="text" name="body" placeholder="Introduction"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <button class="btn btn-lg btn-primary btn-block" >Submit</button>
+                                    </div>
+                                </form>
+                                <a href="/posts">VIEW ALL ARTICLES</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <hr>
+
+<% include ./partials/footer %>

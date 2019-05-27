@@ -1,0 +1,216 @@
+<% include ../partials/header %>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>While Loops</h1>
+          <span class="subheading"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <div>
+            	<h1>While Loops!</h1>
+            	<p>
+            		<button onclick="counterLoop()">Example 1: Console Log - Counter Loop</button>
+            		<!-- <p id="counterLoop"></p> -->
+            	</p>
+            	<p>
+            		<button onclick="stringCharacterLoop()">Example 2: Console Log - String Printing Loop</button>
+            	</p>
+            	<p>
+            		<button onclick="ifInWhile()">If Statement in While Loop</button>
+            	</p>
+            </div>
+            <div>
+            	<h3>While Loops Problem Set</h3>
+            	<ul>
+            		<li>
+            			Print all numbers between -10 and 19. <br>
+            			<button onclick="problemSet1()">Answer</button><br>
+            			<a id="problemSet1"></a>
+            		</li>
+            		<li>
+            			Print all even numbers between 10 and 40. <br>
+            			<button onclick="problemSet2()">Answer</button><br>
+            			<a id="problemSet2"></a>
+            		</li>
+            		<li>
+            			Print all odd numbers between 300 and 333. <br>
+            			<button onclick="problemSet3()">Answer</button><br>
+            			<a id="problemSet3"></a>
+            		</li>
+            		<li>
+            			Print all numbers, divisible by 5 and 3, between 5 and 50. <br>
+            			<button onclick="problemSet4()">Answer</button><br>
+            			<a id="problemSet4"></a>
+            		</li>
+            	</ul>
+            
+            	<h3>Annoy-omatic!</h3>
+            	<ul>
+            		<li>
+            			<button onclick="annoyomatic()">Click Me!</button><br>
+            			<a id="annoyomatic"></a>
+            		</li>
+            	</ul>
+            
+            	<h3>Fizz Buzz</h3>
+            	<ul>
+            		<li>
+            			Print numbers from 1-100. <br>
+            			Print "Fizz" for any number divisible by 3, and "Buzz" for any number divisible by 5. <br>
+            			Print "Fizz Buzz" for any number divisible by both 3 and 5. <br>
+            			<button onclick="fizzBuzz()">Fizz Buzz!</button>
+            		</li>
+            	</ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+<script type="text/javascript">
+
+// The following loop will increment by 3 instead of 1, thus, it will start counting at 0, then increment to 3, then to 6, until it eventually arrives at 30 where the loop condition returns "true" and the loops ends.
+function counterLoop() {
+	var count = 0;
+
+	while(count <= 30) {
+		console.log("count is: " + count);
+		// document.getElementById("counterLoop").innerHTML = "count is: " + count;
+		count+=3;
+	}
+};
+
+
+// The following while loop is specifically looping through a string and printing every cahracter in the string. The theory here can be applied to looping through object.properties so that, for example, I can loop through, and display, the list of LoL characters a streamer uses (and the loop ends once the last character is displayed....but this could be modified to stop after displaying a specific number of characters.)
+function stringCharacterLoop() {
+
+	var demoString = prompt("What is the longest word you know?");
+	// If I set the counter to 0, then I can control what index the looping will start at
+	var count = 0;
+
+	while(count < demoString.length) {
+		console.log(demoString[count]);
+		count++;
+	}
+};
+
+
+// This while loop includes a nested if statement. Remember that the increment is part of the while statement, not the if statement.
+function ifInWhile() {
+	var num = 1;
+	while(num <= 20) {
+		if(num % 4 === 0) {
+			console.log(num)
+		}
+		num++;
+	}
+};
+
+
+
+// Print all numbers between -10 and 19.
+function problemSet1() {
+	var count = -10;
+	while(count < 20) {
+		// document.getElementById("problemSet1").innerHTML = count;
+		document.write(count + ", ");
+		count++;
+	}
+};
+
+
+// Print all even numbers between 10 and 40.
+function problemSet2() {
+	var evenNumbers = 10;
+	while(evenNumbers <= 40) {
+		if (evenNumbers % 2 === 0) {
+			document.write(evenNumbers + ", ");
+		}
+		evenNumbers+=2;
+	}	
+};
+
+
+// Print all odd numbers between 300 and 333.
+function problemSet3() {
+	var oddNumbers = 300;
+	while(oddNumbers <= 333) {
+		if (oddNumbers % 2 === 1) {
+			document.write(oddNumbers + ", ");
+		}
+		oddNumbers++;
+	} 
+};
+
+
+// Print all numbers, divisible by 5 and 3, between 5 and 50.
+function problemSet4() {
+	var count = 5;
+	while(count <= 50) {
+		if (count % 3 === 0 && count % 5 === 0) {
+			document.write(count + ", ");
+		}
+		count++;
+	}
+};
+
+
+// Annoyomatic
+
+// Version 1 - This version didn't work. I got the prompt, but even when I entered "yes" it would still run
+// function annoyomatic() {
+// 	var namePrompt = prompt("Are we there yet?");
+// 	while(namePrompt !== "yes" || namePrompt !== "yeah") {
+// 		var namePrompt = prompt("Are we there yet?");
+// 	}
+// 	alert("THANK GOD");
+// };
+
+// Version 2
+// This one also does not work when I type in the value "yes"
+function annoyomatic() {
+	var namePrompt = prompt("Are we there yet?");
+
+	// The -1 below refers to the value assigned to any value that indexOf() cannot find in the string. If the string is "good job" and I indexOf("boobs"), I will get a -1 value in the console because "boobs" is not in the string.
+	while(namePrompt.indexOf("yes" == -1)) {
+		var namePrompt = prompt("Are we there yet?");
+	}
+	alert("All good");
+	return;
+}
+
+	
+
+function fizzBuzz() {
+	var count = 1;
+
+	while(count <= 100) {
+		if (count % 3 === 0 && count % 5 === 0) {
+			document.write("-Fizz Buzz-<br>");
+		} else if (count % 5 === 0) {
+			document.write("Buzz<br>");
+		} else if (count % 3 === 0) {
+			document.write("Fizz<br>");
+		}
+		count+=1;
+	}
+};
+
+
+</script>
+
+<% include ../partials/footer %>

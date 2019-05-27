@@ -1,0 +1,517 @@
+<% include ../partials/header %>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>The Document Object Model</h1>
+          <span class="subheading">Commonly abbreviated to "The <em>DOM</em>"</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1>The DOM</h1>
+            <div>
+            	<h3>What is the DOM?</h3>
+            	<ul>
+            		<li>
+            			DOM stands for Document Object Model. The DOM is the interface between my JS and HTML+CSS.
+            			<ul>
+            				<li>
+            					The browser turns every HTML tag into a JS object. Each of these objects is stored inside of the top object, the <b><i>document</i></b>. The <i>document</i> object has a very specific structure, very much like a tree with the <i>document</i> residing at the top and the lowest level objects (text within HTML elements) residing at the bottom. 
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            	<h3>How is a Typical DOM-Accessing App Structured?</h3>
+            	<ol>
+            		<li>
+            			Grab User Input
+            			<ul>
+            				<li>querySelectors</li>
+            				<li>eventListeners</li>
+            			</ul>
+            		</li>
+            		<li>
+            			Make API Requests with User Input
+            			<ul>
+            				<li>functions</li>
+            				<li>string concatonation</li>
+            				<li>AJAX calls, Get Requests, and XMLHttpRequests</li>
+            			</ul>
+            		</li>
+            		<li>
+            			Display API Return
+            			<ul>
+            				<li>
+            					push to DOM
+            				</li> 
+            				<li>
+            					JSON.parse, and looking through random Object properties
+            				</li>
+            				<li>
+            					forEach(element in the array in the Object)
+            				</li>
+            				<li>
+            					repeatedly printing the array;s elements
+            				</li>
+            			</ul>
+            		</li>
+            	</ol>
+            </div>
+            
+            <div>
+            	<h1><b>SELECT</b> an <i>ELEMENT</i> and <b>MANIPULATE</b> it.</h1>
+            	<h3><i>5 DOM Selector Methods</i></h3>
+            	<p>
+            		In order to select, and manipulate, HTML elements, first create a variable and assign it the value of whatever HTML element you are going to select and manipulate. For example: <br><br>
+            		<b>var manipulateAllParagraphs = document.querySelectorAll("p");</b><br>
+            		<i>Now you can manipulate all paragraphs because "manipulateAllParagraphs" is a variable that is directly accessing the paragraph tag. The variable "manipulateAllParagraphs" contains all paragraph tags in a node-list (similar to an array but with fewer methods) that can be seen in the console</i>
+            	</p>
+            	<ol>
+            		<li>
+            			document.getElementById()
+            			<ul>
+            				<li>
+            					Takes a string argument and returns the one element with a matching ID (it selects, and manipulates, HTML elements with a specific ID).
+            					<ul>
+            						<li>
+            							var selectID = document.getElementById("idName");
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			document.getElementByClassName()
+            			<ul>
+            				<li>
+            					Takes a string argument and returns <i>a list</i> of elements that have a matching class name.
+            					<ul>
+            						<li>
+            							var selectForID = document.getElementByClassname("className");
+            						</li>
+            					</ul>
+            				</li>
+            				<li>
+            					Affects every element with that class name, thus, need to treat each element with that class name as an indexed element in an array. This gets messy, thus it is best to use a unique class name and then use querySelector().
+            					<br>
+            					<br>
+            					<b>This is a "node list", which is similar to an array (elements can be accessed like in an array) but the more advanced features of arrays, like "forEach", are not present.</b>
+            					<ul>
+            						<li>
+            							If the variable "a" from above was affecting classes, the first element in that array culd be accessed like this: <br>
+            							console.log(a[0]);
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			document.getElementByTagName()
+            			<ul>
+            				<li>
+            					Returns <i>a list</i> of all elements of a given tag name, like all LI or H1 tags. This is a broad spectrum antibiotic, so it's going to select, and manipulate, <i>all specified HTML tags</i>. 
+            					<ul>
+            						<li>
+            							var selectTAGS = document.getElementByTagName("i")
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			document.querySelector()
+            			<ul>
+            				<li>
+            					Returns <b>the first element</b> (<b>always returns only 1 element, the first one</b>) that matches a given CSS-style selector. For example, making the first H1 very pretty.
+            					<ul>
+            						<li>
+            							var querSelectH1 = document.querySelector("h1");
+            						</li>
+            					</ul>
+            				</li>
+            				<li>
+            					This is a <b>fundamental Javascript concept</b> that allows me to use the DOM to select HTML elements to manipulate (and CRUD).
+            					<br>
+            					<br>
+            					<i><b>This can be any type of selector (#id, .class, anything)</b></i>
+            					<ul>
+            						<li>
+            							var a = document.querySelector(".classA");<br>
+            							a.addEventListener("click", function(){<br>
+            							var h1 = document.querySelector("h1");<br>
+            							h1.innerHTML = "WHen you click on the HTML element with the .classA class name, this h1 element changes.";<br>
+            							console.log(h1);<br>
+            							});
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			document.querySelectorAll()
+            			<ul>
+            				<li>
+            					Returns <b>a list of elements</b> that match a given CSS-style selector (thus, not just the first one). 
+            				</li>
+            				<li>
+            					<b>Important:</b> The CSS selector to use should be <b><i>class="cssSelectorName"</i></b>
+            				</li>
+            			</ul>
+            		</li>
+            	</ol>
+            </div>
+            
+            <div>
+            	<h3>Manipulating Elements</h3>
+            	<p>This can be accomplished by anipulating the styling of an HTML element (2 ways to do that listed next). There are also ways to change the textContent of an HTML element as well as changing the attributes of an HTML element, itself.</p>
+            	<ul>
+            		<li>
+            			2 Ways to Change an Element's Style
+            			<ul>
+            				<li>
+            					1. Writing JS that will style an element.
+            					<br><br>
+            					elementBeingStyled.style.color = "blue";<br>
+            					elementBeingStyled.style.border = "10px solid red";
+            					<ul>
+            						<li>
+            							After the assignment operator, a string is necessary. This cannot be any other data type except a string. The problem with manipulating the style of an element is that:
+            							<ol>
+            								<li>
+            									This is not DRY code.
+            								</li>
+            								<li>
+            									Styles should be defined in a separate file in order to keep the structure, the behaviour, and the PRESENTATION (CSS) of the webpage apart from each other. Separation of concerns is expected on the job.
+            									<ul>
+            										<li>
+            											Instead, define a single JS class will all of the styling needed for a specific use case. When needed, call that JS class ("toggle it") on the element being manipulated. 
+            											<ul>
+            												<li>
+            													var example = document.getElementById("highlight"); <br>
+            													*ADD THE NEW CLASS TO THE SELECTED ELEMENT* <br>
+            													tag.classList.add("someClass");
+            												</li>
+            											</ul>
+            										</li>
+            									</ul>
+            								</li>
+            
+            							</ol>
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            			2. Adding &amp; Removing Classes via <b>classList</b>
+            			<ul>
+            				<li>
+            					Take all of your CSS styling and bundle it into well-named CSS classes. When those classes need to be applied to specific HTML elements, do so with <b>classList</b>
+            				</li>
+            				<li>
+            					<b>classList</b> is a read-only list that contains the classes for a given element (NOT an array). Ex: <br><br> 
+            					var seletedElement = document.querySelector("h1");
+            					<ol>
+            						<li>
+            							<b>Add a class to the selected element</b>
+            							<ul>
+            								<li>selectedElement.classList.add("anotherClass");</li>
+            							</ul>
+            						</li>
+            						<li>
+            							<b>Remove a class from a selected element</b>
+            							<ul>
+            								<li>selectedElement.classList.remove("another-class");</li>
+            							</ul>
+            						</li>
+            						<li>
+            							<b>If the given element has the specified class, "toggling" will <i>remove that class from the element</i>. If a given element does NOT have the specified class, "toggling" will <i>add that class to the element</i></b>.
+            							<ul>
+            								<li>
+            									selectedElement.classList.toggle("another-class-name");
+            								</li>
+            							</ul>
+            						</li>
+            					</ol>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			Changing the Content of a Tag
+            			<ul>
+            				<li>
+            					textContent 
+            					<ul>
+            						<li>
+            							Returns a string of all the text contained within a given element, and that text can be changed by reassigning it, much like assigning a new value to a pre-existing variable...HOWEVER, this method treats all of the text as text, thus, you cannot add HTML tags via textContent. You can, however, using innerHTML.
+            						</li>
+            						<li>
+            							var contentOfTag = document.querySelector("p");<br>
+            							contentOfTag.textContent (this will return the content of the tag without any styling) <br>
+            							contentOfTag.textContent = "this is the new content of the paragraph tag";
+            						</li>
+            					</ul>
+            				</li>
+            				<li>
+            					innerHTML
+            					<ul>
+            						<li>
+            							Similar to textContent, except innerHTML returns a string of ALL the HTML contained within a given element, including HTML elements and tags, THUS I can write HTML tags within my string if I'm using innerHTML. 
+            							<ul>
+            								<li>
+            									document.querySelector("selectorName").innerHTML = "This replaces all text content within the element, and I can add HTML elements to make this text bold, italicized, etc.";
+            								</li>
+            							</ul>
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			Changing Attributes (src, href, etc...)
+            			<ul>
+            				<li>
+            					This is important. Changing the source of an image (either the href or the src) happens frequently.
+            					<ul>
+            						<li>
+            							var link = document.querySelector("a");
+            							<ul>
+            								<li>
+            									<b>link.getAttribute("href");</b> (returns the value of the attribute being requested, thus, will return the URL of the href) 
+            								</li>
+            								<li>
+            									<b>link.setAttribute("href", "http://www.dogs.com");</b>  (sets the value of the attribute being requested)
+            								</li>
+            							</ul>
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </div>
+            
+            <div>
+            	<h3>DOM Events</h3>
+            	<p><i>Make Everything Interactive!!!</i></p>
+            	<ul>
+            		<li>
+            			<b>Select an element (make a variable that accesses the element via the DOM), then add <i>an event listener</i></b> to that element (attach an event listener to the new variable that is accessing the HTML element).
+            			<ul>
+            				<li>
+            					The most common types of events are:
+            					<ul>
+            						<li>click</li>
+            						<li>mouseover</li>
+            						<li>dblclick</li>
+            						<li>keypress</li>
+            						<li>drag</li>
+            					</ul>
+            				</li>
+            				<li>
+            					Listen for a click on this BUTTON, or listen for a hover on this ELEMENT, or listen for a keypress event on this TEXT INPUT.
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			Use a method called <b><i>addEventListener</i></b>:
+            			<ul>
+            				<li>
+            					anHTMLelement.addEventListener(eventType, functionToCallOnEvent(){});
+            					<ul>
+            						<li>
+            							Example: <br><br>
+            							var button = document.querySelectorAll("button");<br>
+            							var paragraph = document.querySelectorAll("p");<br><br>
+            							button.addEventListener("click", function(){<br>
+            							....paragraph.innerHTML = "Someone clicked this button";<br>
+            							});
+            						</li>
+            						<li>
+            							The better way to write the above code is to create a separate function and then call that function inside of the addEventListener.
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            		<li>
+            			Mouseover and Mouseout
+            			<ul>
+            				<li>
+            					A "mouseover" is also know as a "hover" effect, the word is always referred to as "mouseover" in the DOM. In order to change an HTML element "on hover", use "mouseover". In order to change that element back, or to something else, use "mouseout".
+            					<ul>
+            						<li>
+            							var paragraph = document.querySelectorAll("p");<br><br>
+            
+            							paragraph.addEventListener("mouseover", function(){<br>
+            							....paragraph.innerHTML = "Your mouse is currently hovering over a paragraph HTML element";<br>
+            							});<br>
+            							<br>
+            							paragraph.addEventListener("mouseout", function(){<br>
+            							....paragraph.innerHTML = "Your mouse is no longer hovering over a paragraph HTML element";<br>
+            							});
+            						</li>
+            					</ul>
+            				</li>
+            			</ul>
+            		</li>
+            	</ul>
+            </div>
+            
+            <div>
+            	<h3>Playing Games with Colors</h3>
+            	<p>
+            		<button class="colorChangingButton">Click Me!</button>
+            		<p class="colorChanger">Testing Testing, 1, 2, 3...</p>
+            	</p>
+            </div>
+            <div>
+            	<h1>Score Keeper</h1>
+            	<h3><span class="scoreTally1">0</span> to <span class="scoreTally2">0</span></h3>
+            	<p>Playing to : <span class="playUntil">5</span></p>
+            
+            	<input type="number" class="playUntilPicker">
+            	<button class="player1">Player 1</button>
+            	<button class="player2">Player 2</button>
+            	<button class="resetButton">RESET</button>
+            </div>
+            <div>
+            	<h3>For Loop on a Bulletted List</h3>
+            	<ul>
+            		<li class="bulletList">List item 1</li>
+            		<li class="bulletList">The next item</li>
+            		<li class="bulletList">Finally, this item</li>
+            	</ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+<script type="text/javascript">
+// Bullet List For Loop
+var bulletList = document.querySelectorAll(".bulletList")
+
+for (var i = 0; i < bulletList.length; i++) {
+	bulletList[i].addEventListener("mouseover", function(){
+		this.classList.add("winner");
+	});
+	bulletList[i].addEventListener("mouseout", function(){
+		this.classList.remove("winner");
+	});
+	bulletList[i].addEventListener("click", function(){
+		this.classList.toggle("completed");
+	});
+}
+
+
+// SCORE KEEPER
+var playerOne = document.querySelector(".player1");
+var playerTwo = document.querySelector(".player2");
+var resetButton = document.querySelector(".resetButton");
+var scoreTally1 = document.querySelector(".scoreTally1");
+var scoreTally2 = document.querySelector(".scoreTally2");
+var playUntil = document.querySelector(".playUntil");
+var playUntilPicker = document.querySelector(".playUntilPicker")
+
+var playerOneScore = 0;
+var playerTwoScore = 0;
+
+var gameOver = false;
+var winningScore = playUntilPicker.value;
+
+
+playerOne.addEventListener("click", function(){
+	if (!gameOver) {
+		playerOneScore ++;
+		if (playerOneScore === winningScore) {
+			scoreTally1.classList.toggle("winner");
+			gameOver = true;
+		}
+		scoreTally1.textContent = playerOneScore;
+	} 
+});
+
+
+
+playerTwo.addEventListener("click", function(){
+	if (!gameOver) {
+		playerTwoScore ++;
+		if (playerTwoScore === winningScore) {
+			scoreTally2.classList.toggle("winner");
+			gameOver = true;
+		}
+	}
+	scoreTally2.textContent = playerTwoScore;
+});
+
+
+// the function "reset" lives outside of the resetButton event listener because the function is call
+resetButton.addEventListener("click", function(){
+	reset();
+});
+
+function reset(){
+	playerOneScore = 0;
+	playerTwoScore = 0;
+	scoreTally1.textContent = 0;
+	scoreTally2.textContent = 0;
+	scoreTally1.classList.remove("winner");
+	scoreTally2.classList.remove("winner");
+	gameOver = false;
+}
+
+playUntilPicker.addEventListener("change", function(){
+	playUntil.textContent = this.value;
+	winningScore = Number( this.value);
+	reset();
+});
+
+
+
+// Click button, see color change!
+var changeColors = document.querySelector(".colorChangingButton");
+var colorChanger = document.querySelector(".colorChanger");
+// var isPurple = false;
+
+// SOLUTION 1
+// changeColors.addEventListener("click", function(){
+// 	if (isPurple) {
+// 		colorChanger.style.background = "white";
+// 		isPurple = false;
+// 	} else {
+// 		colorChanger.style.background = "purple"
+// 		isPurple = true;
+// 	}
+// });
+
+// SOLUTION 2
+// changeColors.addEventListener("click", function(){
+// 	if (isPurple) {
+// 		colorChanger.style.background = "white";
+// 	} else {
+// 		colorChanger.style.background = "purple";
+// 	} 
+// 	 isPurple = !isPurple;	
+// });
+
+
+// SOLUTION 3 = Most elegant
+// Remember: using "toggle" will add a CSS selector (here, a class) to an HTML element, OR take it away. This is easier than using if statements since "toggle" can toggle-on a CSS selector, or toggle-off that same selector.
+changeColors.addEventListener("click", function(){
+	colorChanger.classList.toggle("purple");
+});
+
+</script>
+
+<% include ../partials/footer %>

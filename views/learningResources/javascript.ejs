@@ -1,0 +1,719 @@
+<% include ../partials/header %>
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('img/about-bg.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>JavaScript</h1>
+          <span class="subheading">For the Uninitiated</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h1><a href="htmlANDcss"><button>Intro HTML and CSS</button></a></h1>
+          
+          <div>
+          	<h1>Introduction to Javascript</h1>
+          	<ul>
+          		<li>
+          			HTML
+          			<ul>
+          				<li>
+          					<em>The "nouns" of the webpage.</em>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			CSS
+          			<ul>
+          				<li>
+          					<em>The "adjectives" (which modify the nouns) of the webpage.</em>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			JavaScript
+          			<ul>
+          				<li>
+          					<em>The "verbs" (which give actions to the nouns) of the webpage.</em>
+          				</li>
+          			</ul>
+          		</li>
+          	</ul>
+          </div>
+          <div>
+          	<h1>The 9 Concepts That are The Same In Every Programming Language</h1>
+          	<ul>
+          		<li>
+          			Events
+          			<ul>
+          				<li>
+          					Any action that causes something else to happen. ie: When you refresh the page, a pop-up pops up. Or you get a pop-up when you click a <button onclick="popupExample()">button</button>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			Print
+          			<ul>
+          				<li>
+          					Allows you to "put" things on the screen. For example, there is no text following the button below. However, click the button, and javascript code will be triggered that will "print" text onto the webpage directly following the button. You can think of this javascript code as "imprinting" text onto the webpage or producing text, but the point is that "print" functions to get something onto the screen. For example: 
+          					<li>
+          						<button onclick="textFollows()">Click to see "Print" in action!</button><a id="textFollows"></a>
+          					</li>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			Variables
+          			<ul>
+          				<li>
+          					Variables are <em><strong>not</strong></em> data types. Instead, variables are merely containers with names on them that store values, and those values can be of any datatype. Variables let you store data and recall it later.
+          					Variables follow this pattern: <br>
+          					<ul>
+          						<li>
+          							<b>var yourVariableName = yourValue;</b>
+          						</li>
+          					</ul>
+          					And variables don't care what type of data they are storing (they can even store functions):
+          					<ul>
+          						<li>
+          							var name = "Rusty";
+          						</li>
+          						<li>
+          							var secretNumber = 73;
+          						</li>
+          						<li>
+          							var isAdorable = true;
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Recall the value stored within the variable (the stored value of the variable) by "calling" the variable by name 
+          					<ul>
+          						<li>
+          							function rustyName() { <br>
+          							....var name = "Rusty";<br>
+          							....document.write("Hello there" + name);
+          							};<br>
+          							rustyName();
+          						</li>
+          						<li>
+          							function mathRocks(num2, num3) {<br>
+          							....var num = 37;<br>
+          							....num + num2 + num3; <br>	
+          							};<br>
+          							mathRocks(3,10);
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Update the value of a variable at your discretion:
+          					<ul>
+          						<li>
+          							var name = "Robert";<br>
+          							name = "Bob";
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					A value that can change, depending on conditions or information passed to the program. There are many reasons variables are useful, but in this lesson you can see how they make it really easy to change one thing that will show up changed every where it's referenced, saving you tons of time and headache.
+          				</li>
+          				<li>
+          					For example, the following button will trigger javascript code that will collect pieces of information from the user and then return that information to the user in a pleasing, or useful, manner. 
+          					<li>
+          						<button onclick="variablesFunction()">Click to Learn About Variables!</button><a id="variablesFunction"></a>
+          					</li>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			Concatenation
+          			<ul>
+          				<li>
+          					Putting things together. If by things, you mean strings. In the previous example, the variables "firstName" and "lastName" were gathered by the javascript prompt, and then returned to the user via "document.write".
+          				</li>
+          				<li>
+          					Concatenation is about putting things together. For example, the concatenation of "snow" and "ball" is "snowball". 
+          					<li>
+          						<button onclick="concatFunction()">For Example</button><a id="concatFunction"></a>
+          					</li>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			Primitive Datatypes <br>
+          			These are the most basic data types, which is to say, the most basic types of data that a variable can hold.
+          			Datatypes aka "what type of data is this" - There are a total of 5 different types of data in Javascript:
+          			<ul>
+          				<li>
+          					Numbers
+          					<ul>
+          						<li>
+          							All numbers, whole and integers, are classified as the same type of data
+          							<ul>
+          								<li>4</li>
+          							</ul>
+          							<ul>
+          								<li>9.3</li>
+          							</ul>
+          							<ul>
+          								<li>-10</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Numbers follow the same order of precedence as in Algebra (BEDMAS)
+          							<ul>
+          								<li>
+          									(4+6)*6=60
+          								</li>
+          							</ul>
+          							<ul>
+          								<li>
+          									1/5=.2
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Additionally, "Modulo" is used to find the remainder after math has been done (also known as the "remainder operator")
+          							<ul>
+          								<li>
+          									10 % 3 = 1
+          								</li>
+          							</ul>
+          							<ul>
+          								<li>
+          									24 % 2 = 0
+          								</li>
+          							</ul>
+          							<ul>
+          								<li>
+          									15 % 11 = 4
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Please note: if you put numerical values inside quotation marks, they will be handled as strings, not numbers. If you want to be able to do math operations with a number, make sure it's number and not a string.
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Strings
+          					<ul>
+          						<li>
+          							Any text inside quotation marks (ie: "Just like this!").
+          						</li>
+          						<li>
+          							Single or double quotes are ok
+          							<ul>
+          								<li>
+          									'Hello World' = true
+          								</li>
+          							</ul>
+          							<ul>
+          								<li>
+          									"Hello World" = true
+          								</li>
+          							</ul>
+          							<ul>
+          								<li>
+          									"43" = true
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Concatenation = when strings are combined using BEDMAS and variables
+          							
+          							<ul>
+          								<li>
+          									"charlie" + " brown" = "charlie brown"
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Escape characters start with a forward slash "\"
+          							<ul>
+          								<li>
+          									"The song called \"Slim Shady\" "
+          								</li>
+          							</ul>
+          							<ul>
+          								<li>
+          									"This is a backslash: \\"
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Strings have a length property, which means that someone wrote a function to count the number of characters in a string and then, because of how popular that function was, the programmer's code was adopted by ECMA as a "built in function", or "method", and it is called "length". This method is called on a string via dot notation.
+          							<ul>
+          								<li>
+          									"hello world".length = 11 characters
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Additionally, individual characters within a string can be "accessed". Think of the string as an array with each character in the string representing an indexed element of the array. Append an open array, with an indexed element, to the end of a string to return that character from the string.
+          							<ul>
+          								<li>
+          									"heimerdinger"[5] = "r"
+          								</li>
+          							</ul>
+          							<ul>
+          								<li>
+          									"heimerdinger"[0] = "h"
+          								</li>
+          							</ul>
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Undefined
+          					<ul>
+          						<li>
+          							Variables that are <b>declared</b> but not <b>initialized</b> are an <em><b>undefined</b></em> data type. Asking for the value of a variable that does not contain a value means that the JS engine looks for the value of the declared variable and do not find any. If the variable was not "declared" and was, instead, the name of a color, then the JS engine would return an error message since the variable is declared but not initialized with a value while the color is neither initialized with a value nor even declared as a variable.
+          							<ul>
+          								<li>
+          									var name;
+          								</li>
+          								<li>
+          									var age;
+          								</li>
+          							</ul>
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Null
+          					<ul>
+          						<li>
+          							The "null" data type means "explicitely nothing", whereas "undefined" means "declared as a variable but without a defined value, yet".
+          							<ul>
+          								<li>
+          									var currentPlayer = "charlie";<br>
+          									currentPlayer = null;<br>
+          									<ul>
+          										<li>
+          											This example shows that, if a game maker wanted to know when all players were dead, the "dead setting" for a "player variable" could be "null"
+          										</li>
+          									</ul>
+          								</li>
+          							</ul>
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Booleans
+          					<ul>
+          						<li></li>
+          					</ul>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			<a href="conditionals">
+          			<button>Conditionals and "Control Flow"</button>
+          			</a>
+          			<ul>
+          				<li>
+          					A staple for ever programming language, "control flow" is all about code that allows the user, or system, to make decisions about how code will run. Components of "control flow" are if statements, conditionals, and loops.
+          				</li>
+          				<li>
+          					A great example of a function, as well as of "control flow", is the following button for you to press.
+          				</li>
+          				<li>
+          					<button onclick="oprahGame()">Click Me!</button>
+          					<br><a id="oprahGame"></a>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			Functions
+          			<ul>
+          				<li>
+          					A mathematical concept, a "function" is a small package of code that can complete repetitive tasks. This "package of code" is usually a sequece of sub-steps that the function begins to take once the function has been "called" (type the name of the function with a ";" after it to "call a function"). Each of the examples above, where a box popped up for user input, utilized a function or a built in "method" (which is just a built in function with a name that never changes) or a function and a method. Simply, a function is like a variable for holding expressions and statements. Functions are reusable and can be called over and over.
+          					<ol>
+          						<li>
+          							<b>Declare</b> the function by writing "function functionName(argument1, argument2) {}".
+          						</li>
+          						<li>
+          							<b>Call</b> the function by writing the name of the function after the function has been declared, "functionName(argument1, argument2);"
+          							<ul>
+          								<li>
+          									<b><i>Important</i></b>: writing the name of the function without brackets and arguments (if there are any) will return the function's details, but it will not execute the code within the function. This is called <i>referring to a function</i> when, what we normally want, is to <i>call</i> a function. A function is only executed when brackets (and arguments, if there are any) are appended to the function name, thus: functionName(thisWill, executeTheFunction);
+          								</li>
+          							</ul>
+          						</li>
+          					</ol>
+          				</li>
+          				<li>
+          					Arguments
+          					<ul>
+          						<li>
+          							<b>Arguments</b> are words within the (brackets) that touch the name of the function.
+          							<ul>
+          								<li>
+          									These "words" within the brackets are empty variables. What does that mean? The words within the brackets are variables. Those variables are used within the function. Those variables do not have values assigned to them because their values come from some kind of input, either from the user or from another program. The variables are "empty" until they are "filled" by the user, or another program.
+          									<ul>
+          										<li>
+          											function squareRoot(number) {<br>
+          											....alert(number * number);<br>
+          											};<br>
+          											squareRoot(10); (will return 100)<br>
+          											squareRoot(3); (will return 9)<br>
+          										</li>
+          									</ul>
+          								</li>
+          								<li>
+          									Functions can take as many arguments as needed.
+          									<ul>
+          										<li>
+          											function harryPotterHello(name1, name2, name3) {<br>
+          											....alert("Hello there," + name1 + "!");<br>
+          											....alert("Hello there, " + name2 + "!");<br>
+          											....alert("hello there, " + name3 + "!");<br>
+          											};<br>
+          											harryPotterHello("Ron", "Hagrid", "Ginny");
+          											<ul>
+          												<li>
+          													The order in which the arguments appear, within the function, is the same order in which the arguments will be fed into the function.
+          												</li>
+          											</ul>
+          										</li>
+          									</ul>
+          								</li>
+          							</ul>
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Return (keyword)
+          					<ul>
+          						<li>
+          							Used within a function to capture the <i>output</i> of the function so that the output can be used in other functions or for other tasks. Without using "return" a function can output a value, but that value is only temporarily stored in memory (within the specific execution context) and, thus, the value is lost during "garbage collection". 
+          						</li>
+          						<li>
+          							Without using the "return" keyword to save the output of the function, any values produced by said function will be temporarily stored in memory, but they are considered "undefined" values by the JS engine. 
+          						</li>
+          						<li>
+          							<i>Important</i>: the return keyword stops the execution of a function because, logically, the return keyword will save the output of the function and thus escape it with the value, saved. As soon as I return a value, the function is done (because the point of a function is to take an input and give an output thus, once that output is returned, the return keyword tells the function that its job is done).
+          							<ul>
+          								<li>
+          									If multiple "return" keywords are used in a function, the function will return the value of <b>the first return</b>. If statements change this, obviously.
+          								</li>
+          							</ul>
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Function Declaration vs Function Expression
+          					<ul>
+          						<li>
+          							Function Declaration
+          							<ul>
+          								<li>
+          									function capitalizeWord(stringName) {<br>
+          									....return stringName.chartAt(0).toUpperCase() + stringName.slice(1);<br>
+          									}
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Function Expression
+          							<ul>
+          								<li>
+          									var capitalizeWord = function(stringName) {<br>
+          									........return stringName.chartAt(0).toUpperCase() + stringName.slice(1);<br>
+          									}
+          								</li>
+          								<li>
+          									The only danger with function expressions is the scope of the variable being assiend the function. If that variable is assigned a new value, the function is lost, thus, keeping a close eye on the scope of the variable is essential.
+          								</li>
+          							</ul>
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Scope of a Function
+          					<ul>
+          						<li>
+          							The <b>context</b> in which the code is executed. When a variable is defined outside of a function, the function can still access that variable (= "Child Scope").
+          						</li> 
+          						<li>
+          							If I define a variable outside of a function, then i use that variable within the function and return its value as something different, the NEW value for Y is the new value generated via the function.
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Higher Order Functions
+          					<ul>
+          						<li>
+          							Passing a function, as an argument, to another function. Example: passing a function (twinkle twinkle lyrics held within a function) to the javascript function called "setInterval()". This is a function that takes 2 arguments: the first is the function being passed to "setInterval()" and the second argument is the interval (in number of miliseconds). For example:
+          							<ul>
+          								<li>
+          									function singSong() {<br>
+          									....console.log("twinkle twinkle little star,");<br>
+          									....console.log("how i wonder what you are");<br>
+          									};<br>
+          									setInterval(singSong, 1000);<br>
+          
+          									<!-- How do you stop the interval? There should be a value that is created once setInterval starts running. That value is available in the console, and it just happened to be "2" when the miliseconds interval was 1000 -->
+          									clearInterval(2);<br>
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Anonymous Functions
+          							<ul>
+          								<li>
+          									These functions have no name and they exist within another function, similar to how variables can sometimes exist only within a function. This is the main usage of anonymous functions: to be passed to another function, or created within another function.
+          								</li>
+          								<li>
+          									In the example of "setInterval()", an anonymous function can be created as an argument <i>inside of setInterval()</i>. I don't have to give the function a name, since I'll never use it again and it will live exclusively within this specific "setInterval()" <br>
+          									setInterval(function() {<br>
+          									....console.log("I am an anonymous function!");<br>
+          									}, 2000);
+          								</li>
+          							</ul>
+          						</li>
+          					</ul>
+          				</li>
+          				<li>
+          					Function Problem Sets
+          					<ul>
+          						<li>
+          							Write a function which takes a single numeric argument and returns "true" is the number is even, and "false" otherwise. <br>
+          							<button onclick="isEven()">Click Me!</button>
+          						</li>
+          						<li>
+          							Write a function which takes a single numeric argument and returns the factorial of that number. 
+          							<ul>
+          								<li>
+          									Version 1: <br>
+          									<button onclick="factorial()">Click Me!</button>
+          								</li>
+          								<li>
+          									Version 2: <br>
+          									<button onclick="factorialVersion2()">Click Me!</button>
+          								</li>
+          							</ul>
+          						</li>
+          						<li>
+          							Write a function which takes a single kebab-cased string argument and returns the snake_cased version.<br>
+          							<button onclick="kebabToSnake()">Click Me!</button>
+          						</li>
+          					</ul>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			<a href="arrays">
+          			  <button>Arrays</button>
+          			</a>
+          			<ul>
+          				<li>
+          					Arrays are lists of items, like strings or numbers. They make it easy to work with large sets of data.
+          				</li>
+          				<li>
+          					We'll be working with an array of three different cars in this lesson, which looks like this:
+          				</li>	
+          				<li>
+          					var car = new Array("BMW", "Saab", "Maserati")
+          				</li>
+          				<li>
+          					The first item in the list referred to as being in position zero, and counting up from there.
+          				</li>
+          				<li>
+          					<h2>Aside: Arrays vs <a href="objects"><button>Objects</button></a></h2>
+          					<p> The difference between an array and an object, is that to access an element within an array the syntax reads arrayName[#], whereas to access a property of an object requires the use of dot-notation, ex: objectName.property.deeperProperty . Each element of an array is indexed, but the properties of an object are not indexed (they are not ordered).</p>
+          				</li>
+          			</ul>
+          		</li>
+          		<li>
+          			Debugging
+          			<ul>
+          				<li>
+          					Debugging is the unglamorous, but no less badass coding skills you will need to have to realize your developer dreams. Debugging is about identifying and problem solving issues in your code so your software runs the way you intend it.
+          				</li>
+          				<li>
+          					In this lesson, we're going to look at how you can use the Console in your browser's Inspector to identify where an issue is occurring in your code so you know where to look when fixing it.
+          				</li>
+          				<li>
+          					Use "console.log(variableOrFunctionName)" to check whether avariable or function is passing through to the webpage.
+          				</li>
+          			</ul>
+          		</li>
+          	</ul>
+          </div>
+          <div><h1><a href="theDOM"><button>The DOM</button></a></h1></div>
+          <div>
+          	<h1>JS Stalker Exercise</h1>
+          	<button onclick="stalkerExercise()">Click To Begin!</button>
+          	<a id="stalkerExercise"></a>
+          </div>
+          <div>
+          	<h1>JS Age Calculator</h1>
+          	<button onclick="ageCalculator()">Click To Use!</button>
+          	<a id="ageCalculator"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+
+<script>
+    // Events
+    function popupExample() {
+    	alert("This is an example of an \"onClick\" event where the user must tap, or click, on an HTML element to trigger some javascript code that will manipulate the HTML element via the document object model (DOM).")
+    };
+    
+    // Print
+    function textFollows() {
+    	document.getElementById("textFollows").innerHTML = "<br><br>This code is read as \"document.write\" instead of \"document.print\" for the sole reason that there are multiple ways to print text to the screen.<br><br> Additionally, HTML tags can be used within \"document.write\" in order to properly style the message.<br><br><h3>Apparently, \"document.write\" is inferior to using \"document.getElementById(\"id\").innerHTML =</h3>";
+    };
+    
+    // Variables
+    function variablesFunction() {
+    	var firstName = prompt("What is your First Name?");
+    	var lastName = prompt("What is your First Name?");
+    	document.getElementById("variablesFunction").innerHTML = "<br><br>" + firstName + " " + lastName + ". <br><br>Please click the following button to continue this adventure: <button onclick=\"variablesFunctionZ()\">Click to Learn About Variables!</button>.";
+    
+    };
+    
+    function variablesFunctionZ() {
+    	alert("test");
+    };
+    
+    
+    // Concatenation
+    function concatFunction() {
+    	var petName = prompt("What is the name of your first pet?");
+    	var streetName = prompt("What is the name of the street upon which you grew up?");
+    	document.getElementById("concatFunction").innerHTML = "<br><br>Your stripper name is \"" + petName + " " + streetName +"\". Congratulations!";
+    };
+    
+    
+    // Functions & Conditionals
+    
+    function oprahGame() {
+    	var userName = prompt("What's your name, little one?");
+    	var carName = ["Lamborghini", "Maserati", "Ferrari", "Aston Martin"]
+    	var friendName = ["Cheska", "Stazi", "Narcomoarosa", "Diletti Maghetti", "Conan Franconan"]
+    
+    	if (userName === "Andrew" || userName === "andrew") {
+    		document.getElementById("oprahGame").innerHTML = "You win a " + carName[Math.round((Math.random()*10)/4)] + ", " + userName + ", for you and your best friend, " + friendName[Math.round((Math.random()*10)/5)] + "! You sons of bitches!";
+    	} else {
+    		document.getElementById("oprahGame").innerHTML = "You win a " + carName[Math.round((Math.random()*10)/4)] + ", too, " + userName + ", although it's not nearly as exciting as the " + carName[Math.round((Math.random()*10)/4)] + " that we gave to " + friendName[Math.round((Math.random()*10)/5)] + "!";
+    	}
+    };
+    
+    
+    // document.write can be used to emit markup during the parsing of the page. It cannot be used for modifying the page after it's parsed. The output of document.write goes straight into the parser as though it had been in the HTML document in the first place. 
+    
+    // innerHTML, which is not a function but rather a property, exists on all DOM element instances, and can be used to set their content, using markup. This, along with the various DOM methods available on instances, is the primary way that dynamic web pages are done. 
+    
+    
+    
+    
+    // JS Exercises: Focus on built in JavaScript methods: 
+    // alert();
+    // prompt();
+    // console.log();
+    
+    // Stalker Exercise
+    function stalkerExercise() {
+    	var firstName = prompt("First name?");
+    	var lastName = prompt("Last name?");
+    	var userAge = prompt("How old are you?");
+    	document.getElementById("stalkerExercise").innerHTML = "<br><br>The user's full name is " + firstName + " " + lastName + ". Additionally, the user is " + userAge + " years of age.";
+    }
+    
+    // Age Calculator
+    function ageCalculator() {
+    	var ageCollect = prompt("How old are you?");
+    	var ageCompute = Math.round((ageCollect * 365) + (ageCollect /4));
+    	document.getElementById("ageCalculator").innerHTML = "You have lived approximately " + ageCompute + " days thus far!";
+    
+    }
+    
+    
+    
+    
+    // Write a function which takes a single numeric argument and returns "true" if the number is even, and "false" otherwise. 
+    function isEven(input) {
+    	var input = prompt("Pick a number, any number!");
+    
+    	if (input % 2 === 1) {
+    		return alert("You entered: " + input + ", which is an ODD number.");
+    	} else {
+    		return alert("You entered: " + input + ", which is an EVEN number.");
+    	}
+    	   
+    };
+    
+    
+    
+    // Write a function which takes a single numeric argument and returns the factorial of that number. 
+    
+    // VERSION 1: COUNTING UP
+    function factorial(input) {
+    	var input = prompt("Pick a number and get its factorial value!");
+    
+    	// Define a result variable, which will be the terminal value for the loop
+    	var result = 1;
+    
+    	// calculate factorial and store resulting value
+    	for (var i = 2; i <= input; i++) {
+    		
+    		result = result * i;
+    		// can also be written as "result *= i"
+    	}
+    	// use keyword "return" to store the resulting variable, and escape the function.
+    	return alert(result);
+    };
+    
+    // VERSION 2: COUNTING DOWN
+    function factorialVersion2(input) {
+    	var input = prompt("Pick a number and get its factorial value!");
+    
+    	var result = input;
+    
+    	for (var i = input - 1; i >= 1; i--) {
+    		console.log(i);
+    		result *= i;
+    	}
+    
+    	if (result != 0) {
+    		return alert(result);
+    	} else {
+    		return alert("1");
+    	}
+    };
+    
+    
+    // Write a function which takes a single kebab-cased string argument and returns the snake_cased version.
+    function kebabToSnake(input) {
+    	var input = prompt("Please write a sentence using kebabCase! (This-is-an-example)");
+    
+    	//  I don't know how, but I was able to replace "white space" (spaces between words, otherwise known as an "empty character")
+    	// Below, I am using / /g to identify the character, at a global level (which is just the entire string, not the entire page) that I want to replace with a "-". 
+    	// Whatever I place between the regular express, / /g, is the pattern that the JS engine will look to replace.
+    	var spacesToKebab = input.replace(/ /g, "-");
+    
+    	var kebabToSnake = spacesToKebab.replace(/-/g, "_");
+    
+    	// .replace does not permanently replace anything within the original string, instead, .replace only return a new copy of the string with the specified characters replaced. Thus, the "return" keyword must be used to save the new string.
+    	return alert(kebabToSnake);
+    };
+</script>
+
+<% include ../partials/footer %>
